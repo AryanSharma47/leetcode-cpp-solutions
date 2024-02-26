@@ -1,3 +1,4 @@
+//Easy and Simple C++ Solution for Search Insert Position
 #include<bits/stdc++.h>
 class Solution {
 public:
