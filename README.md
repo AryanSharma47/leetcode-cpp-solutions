@@ -1,2 +1,2 @@
 # leetcode-cpp-solutions
-It contains some leetcode problems solutions of cpp.
+It contains some leetcode problems solutions in C++.
