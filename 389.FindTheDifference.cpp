@@ -1,4 +1,4 @@
-//Approach-1 || Best Solution || Beats 100% users
+//First Approach || Best Solution || Beats 100% users
 class Solution {
 public:
     char findTheDifference(string s, string t) {
