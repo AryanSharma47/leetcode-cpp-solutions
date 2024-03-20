@@ -8,14 +8,11 @@ public:
 
         for(int i=0;i<n;i++)
         {
-            string ans="";
-            for(int j=i;j<n && j<i+10;j++)
-                ans+=s[j];
-            
+            string ans=s.substr(i,10);
             mp[ans]++;
         }
 
-        for(const auto& num : mp)
+        for(auto num : mp)
         {
             if(num.second > 1)
             v.push_back(num.first);
