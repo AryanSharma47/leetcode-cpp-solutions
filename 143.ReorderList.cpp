@@ -1,14 +1,5 @@
 //Simplest Approach || Using Two Pointers
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode() : val(0), next(nullptr) {}
- *     ListNode(int x) : val(x), next(nullptr) {}
- *     ListNode(int x, ListNode *next) : val(x), next(next) {}
- * };
- */
+
 class Solution {
 public:
     ListNode *reverse(ListNode *head)
@@ -58,5 +49,48 @@ public:
            res->next=fwd;
       
        head=ans->next;
+    }
+};
+
+//Second Approach Using Stack
+
+class Solution {
+public:
+    void reorderList(ListNode* head) {
+        if(!head || !head->next)
+        return;
+
+       ListNode *temp=head;
+       stack<ListNode*> st;
+
+       while(temp)
+       {
+        st.push(temp);
+        temp=temp->next;
+       } 
+
+       temp=head;
+       int mid=(st.size()+1)/2;
+       
+       while(mid--)
+       {
+        ListNode *next=temp->next;
+        ListNode *last=st.top();
+        st.pop();
+        
+        if(temp!=last)
+        {
+            temp->next=last;
+            last->next=next;
+            temp=next;
+        }
+        else
+        {
+            temp->next=NULL;
+            break;
+        }
+        if(mid==0)
+        last->next=NULL;
+       }
     }
 };
